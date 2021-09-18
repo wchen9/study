@@ -14,6 +14,10 @@ nacos 在 Spring Cloud 生态中扮演的角色是服务发现、服务配置、
 
 #### 服务注册与发现原理解析
 
+![nacos服务注册与发现](https://tvax4.sinaimg.cn/large/0088W2NMgy1guku7yzpwsj60qo0c8gq202.jpg)
+
+nacos 会监听 ApplicationStartedEvent 事件，在 spring boot 启动完成后会触发事件，然后事件会触发注册的动作。
+
 #### 配置要点
 
 略
@@ -21,6 +25,10 @@ nacos 在 Spring Cloud 生态中扮演的角色是服务发现、服务配置、
 ### 作为动态配置服务
 
 操作指引略。
+
+#### 作为配置中心的架构流程
+
+![配置中心架构流程](https://tva4.sinaimg.cn/large/0088W2NMgy1gukmtc3efqj61kk11245302.jpg)
 
 #### 遇到的坑
 1. 配置了远程配置文件之后，在`bootstrap.yml`文件中指定了配置中心与发现中心，然而启动时未获取到配置。
@@ -38,11 +46,15 @@ nacos 在 Spring Cloud 生态中扮演的角色是服务发现、服务配置、
 
 nacos 可分为三个维度进行环境隔离 namespace 级，group级，data-id 级。data-id 级可根据启动的 profile 与 data-id 的文件特征来确定具体选用哪个配置文件。
 
+### 常见问题？
+#### 1. 如何使用 nacos 实现灰度发布？
 
-
+待续，实现灰度发布需要多个组件配合实现。
 
 ## 参考链接
 - [1] [Spring Cloud Alibaba 教程 | Nacos（一）](https://segmentfault.com/a/1190000021497996)
 - [2] [Spring Cloud Alibaba 教程 | Nacos（二）](https://segmentfault.com/a/1190000021501996)
 - [3] [SpringCloud项目中使用Nacos作为配置中心](https://www.cnblogs.com/cailijuan/p/12018083.html)
 - [4] [bootstrap.yml not loading in Spring Boot 2](https://stackoverflow.com/questions/50821110/bootstrap-yml-not-loading-in-spring-boot-2)
+- [5] [Nacos配置中心交互模型是 push 还是 pull ？（原理+源码分析）](https://toutiao.io/posts/11z0yzz/preview)
+- [6] [Nacos 服务注册的原理](https://www.cnblogs.com/wuzhenzhao/p/13625491.html)
