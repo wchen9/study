@@ -17,11 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 public class EchoController {
 
-    @Value("${demo.config}")
+//    @Value("${demo.config}")
     private String democonfig;
 
     @GetMapping("/echo/{str}")
     public String echo(@PathVariable String str) {
+        System.out.println("i executed");
         return "nacos discovery echo :" + str;
     }
 

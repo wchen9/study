@@ -1,2 +1,3 @@
 server:
-  port: 12233
+  port: 43232
+#  port: 12233

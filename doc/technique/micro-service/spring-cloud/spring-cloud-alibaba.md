@@ -51,6 +51,21 @@ nacos 可分为三个维度进行环境隔离 namespace 级，group级，data-id
 
 待续，实现灰度发布需要多个组件配合实现。
 
+
+## ribbon
+
+ribbon 在 spring cloud alibaba 体系中扮演的角色为负载均衡器。类似的负载均衡器有 nginx ，不过 nginx 是服务器端负载均衡，而 ribbon 是客户端负载均衡。ribbon 可以与 RestTemplate 结合使用，或与 OpenFeign 一起使用。
+
+nacos 中已经有依赖了 ribbon，所以若已经依赖了 nacos，则直接使用即可。
+
+### 与 RestTemplate 整合的运行流程
+
+![ribbon与RestTemplate整合的流程](https://tvax1.sinaimg.cn/large/0088W2NMgy1gulw805xlsj60l60880tf02.jpg)
+
+### ribbon 常见的负载均衡策略
+
+
+
 ## 参考链接
 - [1] [Spring Cloud Alibaba 教程 | Nacos（一）](https://segmentfault.com/a/1190000021497996)
 - [2] [Spring Cloud Alibaba 教程 | Nacos（二）](https://segmentfault.com/a/1190000021501996)
@@ -58,3 +73,4 @@ nacos 可分为三个维度进行环境隔离 namespace 级，group级，data-id
 - [4] [bootstrap.yml not loading in Spring Boot 2](https://stackoverflow.com/questions/50821110/bootstrap-yml-not-loading-in-spring-boot-2)
 - [5] [Nacos配置中心交互模型是 push 还是 pull ？（原理+源码分析）](https://toutiao.io/posts/11z0yzz/preview)
 - [6] [Nacos 服务注册的原理](https://www.cnblogs.com/wuzhenzhao/p/13625491.html)
+
