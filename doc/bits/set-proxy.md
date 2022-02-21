@@ -34,10 +34,16 @@ ProxyCommand connect -S 127.0.0.1:7890 %h %p
 [Environment]::SetEnvironmentVariable("HTTPS_PROXY",$null,"User")
 ```
 
+## pip 设置国内镜像
+```
+pip config set global.index-url http://mirrors.cloud.tencent.com/pypi/simple
+```
+
 ## windows 下使用 poetry 可能存在哪些问题？
 
 1. 代理设置里面socks 代理需修改为 socks5h，因为可能遇到 `ConnectionError` 报错；
 2. 在 VSCode 里面使用 poetry 添加包，可能会因 IDM 导致无法下载。
+3. clash 代理设置后会与python冲突，需要打开Specify Protocol设置。
 
 ## 参考文档
 - [1] [如何为你的命令行设置加速](https://segmentfault.com/a/1190000040510873)
